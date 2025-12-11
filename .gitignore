@@ -30,3 +30,9 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Generated API files
+src/api/generated
+
+# Swagger JSON file
+swagger.json
