@@ -12,8 +12,9 @@
     "server": "node server/index.js",
     "server:dev": "node --watch server/index.js",
     "save:swagger": "node scripts/save-swagger.js",
-    "generate:api": "npm run save:swagger && orval",
-    "generate:api:live": "orval"
+    "generate:api": "orval",
+    "generate:api:fix": "orval && node scripts/fix-orval-query-key.js",
+    "generate:api:from-file": "npm run save:swagger && npm run generate:api"
   },
   "dependencies": {
     "@tanstack/react-query": "^5.17.0",

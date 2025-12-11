@@ -3,7 +3,7 @@ import { defineConfig } from "orval";
 export default defineConfig({
   api: {
     input: {
-      target: "./swagger.json",
+      target: "http://localhost:3001/api-docs.json",
     },
     output: {
       target: "./src/api/generated",
