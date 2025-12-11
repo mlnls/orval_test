@@ -1,30 +1,3 @@
-/**
- * Orval 생성 코드 자동 수정 스크립트
- *
- * 역할:
- * - orval이 생성한 React Query hooks에서 발생하는 문제를 자동으로 수정
- * - React의 규칙 위반: hook 반환값을 직접 수정하는 코드를 수정
- *
- * 문제:
- *   query.queryKey = queryOptions.queryKey;  // ❌ React 규칙 위반
- *   return query;
- *
- * 해결:
- *   return {                              // ✅ 새 객체 반환
- *     ...query,
- *     queryKey: queryOptions.queryKey,
- *   };
- *
- * 사용 시나리오:
- * - npm run generate:api 실행 후 자동으로 실행됨
- * - orval이 생성한 모든 파일에서 queryKey 할당 문제를 일괄 수정
- *
- * 실행 방법:
- *   npm run generate:api  (자동 실행)
- *   또는
- *   node scripts/fix-orval-query-key.js  (수동 실행)
- */
-
 import fs from "fs";
 import { globSync } from "glob";
 
